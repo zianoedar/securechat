@@ -10,7 +10,7 @@ const formatAMPM = (date) => {
 
 const formatDate = (date) => {
     let day = date.getDate()
-    let month = date.getMonth()
+    let month = date.getMonth() + 1
     const year = date.getFullYear()
 
     day = day < 10 ? '0' + day : day
@@ -25,11 +25,9 @@ export const dateFormat = (timestamp, longDate = false) => {
 
     if (formatDate(date) === formatDate(today)) {
         return formatAMPM(date)
-    } else if (!longDate){
+    } else if (!longDate) {
         return formatDate(date)
     } else {
         return formatDate(date) + " " + formatAMPM(date)
     }
-
-
 }
